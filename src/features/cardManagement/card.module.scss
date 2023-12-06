@@ -1,0 +1,120 @@
+.card_management {
+  margin-bottom: 20px;
+
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+
+    .card_management_title {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    .add_balance {
+      font-size: 22px;
+      color: #333;
+      border: 1px solid #333;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: 200ms linear;
+      &:hover {
+        border-color: #000000;
+        color: #000000;
+        transition: 200ms linear;
+      }
+    }
+  }
+  .card {
+    background: #2d2d2d;
+    border-radius: 16px;
+    padding: 25px 30px;
+    color: #ffffff;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .card_heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    .card_balance {
+      font-size: 32px;
+      text-align: center;
+      margin: 25px;
+      span {
+        font-size: 16px;
+        position: relative;
+        top: -12px;
+        left: 3px;
+        opacity: 0.5;
+      }
+    }
+
+    .card_date {
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+
+  .currency_wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin: 10px 0;
+
+    .currency{
+      display: flex;
+      width: 100%;
+      overflow-x: auto;
+      max-width: 380px;
+      padding-bottom: 5px;
+      &::-webkit-scrollbar { height: 3px; }
+      &::-webkit-scrollbar-track { background: #fffefe; }
+      &::-webkit-scrollbar-thumb { background: rgb(209, 209, 209); border-radius: 20px;}
+    }
+
+    .currency_item {
+      border: 1px solid #363636;
+      border-radius: 8px;
+      color: #363636;
+      padding: 8px 14px;
+      margin-right: 10px;
+      cursor: pointer;
+
+      &.active {
+        background: #363636;
+        border-color: #363636;
+        color: #fff;
+      }
+    }
+
+    .addCurrency {
+      margin: 0 0 0 auto;
+      border: 1px solid #363636;
+      border-radius: 8px;
+      color: #363636;
+      // padding: 10px;
+      font-size: 28px;
+      margin-right: 10px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 36px;
+      width: 36px; 
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.expenses_overview {
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+
+    .expenses_actions { 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        min-width: 24px; 
+        width: 24px;
+        height: 24px;
+        margin-left: 6px;
+        opacity: 0.5;
+        cursor: pointer;
+        path {
+          stroke: #333;
+        }
+        &:hover{
+        opacity: 0.7;
+
+        }
+      }
+    }
+  }
+
+  .cats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17%, 1fr));
+    grid-gap: 6px; 
+    .cat_item {
+      border: 1px solid #000000;
+      border-radius: 8px;
+      padding: 10px 13px;
+      display: flex; 
+
+      .info {
+        .cat_name {
+          font-size: 14px;
+          line-height: 15px;
+          margin-bottom: 6px;
+          text-transform: capitalize;
+          word-break: break-all;
+        }
+        .cat_sum {
+          font-size: 10px;
+          line-height: 10px;
+
+          color: #7c7c7c;
+        }
+      }
+    }
+  }
+}
+ 

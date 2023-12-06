@@ -1,0 +1,48 @@
+@import "src/variables.scss";
+
+.nav {
+  position: absolute;
+  top: 0;
+  right: 16px;
+  margin: 32px 0;
+  z-index: 2;
+
+  .menu_items {
+    display: flex;
+    align-items: center;
+
+    a {
+      position: relative;
+      margin: 0 20px;
+      color: $light;
+
+      &.sign_in_btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 48px;
+        padding: 0 30px;
+        border-radius: 8px;
+        background: rgba(230, 230, 230, 0.29);
+      }
+
+      &.active {
+        &:before {
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: -15px;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          transform: translate(-50%);
+          // TODO: replace
+          background: $green;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+}

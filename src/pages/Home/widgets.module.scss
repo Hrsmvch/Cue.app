@@ -1,0 +1,63 @@
+@import "src/variables.scss";
+
+.overview_widget_1 {
+  grid-area: finance;
+}
+
+.overview_widget_3 {
+  grid-area: transaction;
+}
+ 
+ 
+
+.overview_container {
+  height: calc(100% - 70px);
+  display: grid;
+  grid-template-areas:
+    "finance finance finance finance events events"
+    "finance finance finance finance events events"
+    "finance finance finance finance events events"
+    "transaction transaction note note reminder reminder"
+    "transaction transaction note note reminder reminder";
+  grid-gap: 10px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  .widget {
+    background: rgba(60, 60, 60, 0.4);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    padding: 16px;
+    display: block;
+    min-height: 100px;
+    max-height: 100%;
+    height: 100%;  
+  }
+}
+
+@media (width <= $breakpoint-lg) {
+  .overview_container {
+    height: fit-content;
+    grid-template-areas:
+      "finance finance"
+      "finance finance"
+      "note events"
+      "note events"
+      "transaction reminder"
+      "transaction reminder";
+  }
+}
+
+@media (width <= $breakpoint-md) {
+  .overview_container {
+    grid-template-areas:
+      "reminder reminder"
+      "events events"
+      "finance finance"
+      "note note"
+      "transaction transaction";
+  }
+}

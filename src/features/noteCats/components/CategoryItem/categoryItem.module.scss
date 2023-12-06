@@ -1,0 +1,156 @@
+@import "src/variables.scss";
+
+.cat {
+  position: relative;
+  margin-bottom: 18px;
+  margin-left: 30px;
+  color: $dark;
+
+  input[type="text"] {
+    width: 75%;
+    padding: 0px;
+    opacity: 0.6;
+    background: transparent;
+    border: none;
+    margin-bottom: 20px;
+    outline: none;
+    font-size: 18px;
+  }
+
+  .actions_updating {
+    position: absolute;
+    top: -3px;
+    right: 0px;
+
+    button {
+      margin-left: 5px;
+    }
+  }
+
+  .actions {
+    position: absolute;
+    top: 15px;
+    right: 0px;
+    opacity: 0;
+    transition: opacity 300ms linear;
+    cursor: pointer;
+
+    svg {
+      height: 16px;
+      margin-left: 10px;
+      opacity: 0.3;
+      transition: opacity 200ms linear;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .save_updates,
+  .closeUpdating {
+    padding: 6px 16px;
+    border-radius: 8px;
+    border: 1px solid rgb(80, 80, 80);
+    color: rgb(80, 80, 80);
+    text-transform: uppercase;
+    font-weight: 600;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &:hover {
+    .actions {
+      opacity: 1;
+    }
+  }
+
+  .add_category {
+    // position: absolute;
+    // right: 0px;
+    // top: 3px;
+    // opacity: 0.5;
+    // cursor: pointer;
+  }
+
+  .cat_name {   
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 29px;
+    margin-bottom: 15px;
+    cursor: pointer;
+  }
+
+  .cat_note_count {
+    position: relative;   
+    font-size: 12px;
+    line-height: 15px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      background: $dark;
+      width: 100%;
+      height: 0.5px;
+    }
+  }
+  &:nth-child(n + 2) {
+    &:before {
+      counter-increment: catCount;
+      content: counter(catCount, decimal-leading-zero) ". ";
+      position: absolute;
+      top: 6px;
+      left: -30px; 
+      font-weight: 500;
+      line-height: 15px;
+      font-size: 12px;
+    }
+  } 
+}
+
+
+@media (width <= $breakpoint-lg) {
+ 
+  .cat {
+    white-space: nowrap;
+    margin: 0;
+    margin-right: 20px;
+
+    .cat_name {
+      font-size: 16px;
+      margin-bottom: 0;
+      font-weight: 400;
+    }
+
+    &.active{
+      .cat_name{
+        font-weight: 600;
+      }
+    }
+
+    .cat_note_count {
+      &:before {
+        display: none;
+      }
+    }
+  
+    &:before {
+      display: none;
+    }
+ 
+
+    &.active {
+      .cat_name {
+        font-weight: 600;
+      }
+    }
+
+    .actions{
+      display: none;
+    }
+  }
+}
+ 
+

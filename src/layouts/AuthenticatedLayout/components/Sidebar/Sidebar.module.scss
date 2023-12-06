@@ -1,0 +1,22 @@
+@import "src/variables.scss";
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 0;
+  min-width: 102px;
+  background-color: $dark;
+
+  .logo{
+    width: 35px;
+    margin: 16px auto; 
+  display: block; 
+  }
+}
+
+@media (width <= $breakpoint-sm) {
+  .sidebar {
+    display: none;
+  }
+}

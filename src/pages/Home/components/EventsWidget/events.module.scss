@@ -1,0 +1,147 @@
+@import "src/variables.scss";
+
+.events {
+  grid-area: events;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  height: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: rgba(60, 60, 60, 0.4);
+
+  .title {
+    position: relative;
+    display: inline-block;
+    padding: 16px 16px 20px;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    // text-align: center;
+    color: $dark;
+
+    .btn_open {
+      display: none;
+      padding: 0;
+      margin: 0;
+      background: none;
+
+      svg {
+        width: 15px;
+      }
+    }
+  }
+  .wrapper {
+    display: block;
+    // max-height: calc((100vh - 250px) / 2);
+    max-height: 350px;
+    overflow-y: auto;
+
+    .event_item {
+      position: relative;
+      margin-bottom: 30px;
+      padding-left: 40px;
+
+      .event_time {
+        margin-bottom: 12px;
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: 400;
+        color: $brown;
+      }
+
+      .event_title {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 22px;
+        color: $dark;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 8px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: $brown;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: 10px;
+        width: 1px;
+        height: 90%;
+        border-left: 2px dashed $grey;
+      }
+    }
+  }
+
+  .no_data {
+    max-width: 250px;
+    margin: 60px 0;
+    font-size: 16px;
+    color: $grey;
+
+    a {
+      text-decoration: underline;
+      color: $dark;
+    }
+  }
+}
+
+@media (width <= $breakpoint-md) {
+  .events {
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      font-size: 16px;
+      cursor: pointer;
+
+      .btn_open {
+        display: flex;
+        align-items: center;
+        border: none;
+      }
+    }
+    .wrapper {
+      display: none;
+      margin-top: 30px;
+
+      .event_item {
+        margin-bottom: 20px;
+
+        .event_time {
+          margin-bottom: 6px;
+        }
+
+        &::after {
+          height: 50%;
+          left: 11px;
+        }
+      }
+    }
+
+    &.active {
+      .title {
+        .btn_open {
+          transform: rotate(180deg);
+        }
+      }
+      .wrapper {
+        display: block;
+      }
+    }
+
+    .no_data {
+      max-width: unset;
+      margin: 30px 0;
+    }
+  }
+}

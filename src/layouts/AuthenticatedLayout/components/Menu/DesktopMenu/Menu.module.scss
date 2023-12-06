@@ -1,0 +1,56 @@
+@import "src/variables.scss";
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  margin: 25px 0;
+  overflow-y: auto;
+  overflow-x: hidden; 
+
+  &::-webkit-scrollbar { display: none; } 
+  
+  .nav_link {
+    position: relative;
+    
+    & > span {
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 200ms linear;
+    }
+    &:hover > span {
+      z-index: 5;
+
+      opacity: 1;
+      transition: opacity 200ms linear;
+    }
+  }
+  .active {
+    svg {
+      g {
+        path {
+          fill: #bba197;
+          stroke: transparent;
+        }
+      }
+      path,
+      line {
+        stroke: #bba197;
+      }
+    }
+  }
+  svg {
+    height: 24px;
+    width: 24px;
+    display: block;
+    margin: 10px auto;
+  }
+}
+
+svg.setting_icon {
+  height: 24px;
+  width: 24px;
+  display: block;
+  margin: 10px auto;
+}

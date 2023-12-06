@@ -1,0 +1,26 @@
+@import "src/variables.scss";
+
+.cards{
+  column-count: 3;
+  column-gap: 10px; 
+
+  .card{
+    border: 1px solid #ebebeb;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    padding: 16px;
+    break-inside: avoid-column;
+  }
+}
+
+@media (width <= $breakpoint-lg) {
+  .cards{
+    column-count: 2; 
+  
+    .card{
+      &:not(:nth-child(n+3)){
+        display: none;
+      }
+    }
+  }
+}

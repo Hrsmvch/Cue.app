@@ -1,0 +1,27 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-left: 132px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 250ms linear;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 30;
+
+  &.active {
+    opacity: 33;
+    pointer-events: all;
+  }
+}
+
+@media (max-width: 767px) {
+  .modal {
+    padding: 16px;
+  }
+}

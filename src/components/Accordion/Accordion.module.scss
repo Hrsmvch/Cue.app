@@ -1,0 +1,118 @@
+@import "src/variables.scss";
+
+.accordion {
+  flex: 1;
+  overflow-y: auto;
+
+  .accordion_item {
+    margin: 0 24px 0 70px;
+
+    .accordion_title {
+      position: relative;
+      padding: 15px 0;
+      text-align: left;
+      font-size: 16px;
+      color: $dark;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 22px;
+        left: -30px;
+        width: 10px;
+        height: 2px;
+        background-color: $dark;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 22px;
+        left: -30px;
+        width: 10px;
+        height: 2px;
+        background-color: $dark;
+        transform: rotate(-90deg);
+        transition: transform 600ms ease-in;
+      }
+    }
+
+    .accordion_content {
+      position: relative;
+      height: 0;
+      padding-left: 60px;
+      overflow: hidden;
+      opacity: 0;
+      transition: height 600ms ease-in, opacity 600ms ease-in;
+      line-height: 24px;
+      color: $dark;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 30px;
+        width: 2px;
+        height: calc(100% - 30px);
+        background-color: $dark;
+      }
+
+      &.active {
+        height: auto;
+        opacity: 1;
+        transition: height 600ms ease-in, opacity 600ms ease-in;
+      }
+    }
+
+    &.dark_mode {
+      .accordion_title {
+        color: $light;
+
+        &::before,
+        &::after {
+          background-color: $light;
+        }
+      }
+      .accordion_content {
+        color: $light;
+
+        &:before {
+          background-color: $light;
+        }
+      }
+    }
+
+    &.active {
+      .accordion_content {
+        padding-top: 10px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+}
+@media (max-width: $breakpoint-md) {
+  .accordion {
+    .accordion_item {
+      margin: 0 24px 0 30px;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .accordion {
+    .accordion_item {
+      .accordion_title,
+      .accordion_content {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      .accordion_content {
+        padding-left: 0px;
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+}

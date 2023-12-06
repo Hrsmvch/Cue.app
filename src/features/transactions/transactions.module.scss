@@ -1,0 +1,65 @@
+.transaction_title {
+  font-size: 22px;
+  line-height: 29px;
+  color: #242424;
+  margin-bottom: 20px;
+}
+
+.recent_transactions {
+  max-height: calc(100vh - 460px);
+  overflow-y: auto;
+  .transaction_item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;  
+    padding-left: 6px;
+
+    &::before{
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      width: 98%;
+      height: 1px;
+      background: #242424;
+    } 
+  
+    .section_description {
+      .section_title {
+        font-size: 14px;
+        text-transform: capitalize; 
+      }
+      .section_coment {
+        font-size: 12px;
+        opacity: 0.5;
+        margin-top: 5px;
+      }
+    }
+    .expense {
+      margin: 0 0 0 auto;
+      font-style: 16px; 
+    }
+    .actions{
+      display: flex;
+      opacity: 0;
+      transition: opacity 300ms linear;
+      margin: 0 10px; 
+      width: 0;
+      svg{
+        height: 15px;
+        opacity: 0.4;
+        cursor: pointer;
+      }
+    }
+
+    &:hover{
+      .actions{ 
+        opacity: 1;
+        width: auto;
+        transition: opacity 300ms linear;
+      }
+    }
+  }
+}

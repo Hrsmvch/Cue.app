@@ -1,0 +1,148 @@
+@import "src/variables.scss";
+
+.page_content {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.rbc-calendar {
+  color: $light;
+  overflow: hidden;
+  border-radius: 16px;
+  height: 100%;
+
+  .rbc-event.rbc-selected,
+  .rbc-day-slot .rbc-selected.rbc-background-event {
+    background: inherit;
+    border: 2px solid #9a9a9a;
+    outline: none;
+  }
+
+  .rbc-month-view {
+    height: 100%;
+    overflow-y: auto; 
+  }
+  .rbc-month-row {
+    min-height: 100px;
+  }
+  .rbc-event {
+    border: 2px solid #9a9a9a;
+    padding: 4px 10px;
+    background-color: rgb(239 239 239 / 30%);
+    border-radius: 16px;
+ 
+  }
+
+  .rbc-show-more {
+    background: none;
+    font-size: 12px;
+  }
+
+  .rbc-time-column .rbc-timeslot-group {
+    min-height: 200px;
+  }
+
+  .rbc-events-container {
+    .rbc-event {
+      min-height: 60px;
+
+      .rbc-event-label {
+        font-size: 10px;
+      }
+
+      .rbc-event-content {
+        margin-top: 20px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .rbc-toolbar {
+    margin: 10px 10px 30px;
+
+    button {
+      color: #ccc;
+
+      &:focus,
+      &:active,
+      &:hover {
+        background-color: #5d5d5d;
+        color: unset;
+        box-shadow: none;
+        border-color: unset;
+      }
+    }
+
+    .rbc-active {
+      background-color: #5d5d5d;
+      &:focus,
+      &:active,
+      &:hover {
+        background-color: #5d5d5d;
+        color: unset;
+        box-shadow: none;
+        border-color: unset;
+      }
+    }
+
+    .rbc-toolbar-label {
+      font-size: 18px;
+      font-family: monospace;
+    }
+  }
+
+  .rbc-month-header {
+    .rbc-header {
+      padding: 10px;
+      font-size: 16px;
+      font-family: monospace;
+      font-weight: normal;
+    }
+  }
+
+  .rbc-month-view {
+    border: none;
+    border-top: 1px solid #fff;
+  }
+  .rbc-off-range-bg {
+    background: #cdb7af;
+  }
+  .rbc-off-range {
+    opacity: 0;
+  }
+
+  .rbc-today {
+    background-color: unset;
+  }
+
+  .rbc-now {
+    button {
+      background-color: $dark-green;
+      padding: 5px;
+      margin-right: -4px;
+    }
+  }
+}
+
+ 
+@media (max-width: 767px) {
+  .page_content {
+    flex-direction: column;
+    max-height: 100vh;
+    overflow-y: auto;
+    height: 100%;
+  }
+  .rbc-calendar {
+    .rbc-toolbar{
+      flex-direction: column-reverse;
+      .rbc-btn-group{
+        order: 1;
+      }
+      .rbc-toolbar-label{
+        margin-top: 20px;
+      }
+    }
+  }
+ 
+}

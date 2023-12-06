@@ -1,0 +1,135 @@
+@import "src/variables.scss";
+
+.notification_wrap {
+  position: relative;
+  padding: 20px 0;
+
+  h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+  }
+
+  .by_type_of_day {
+    margin: 30px 0;
+
+    .options {
+      display: flex;
+      gap: 50px;
+
+      .option_item {
+        display: flex;
+        align-items: center;
+
+        input {
+          zoom: 2;
+          accent-color: $dark-green;
+        }
+
+        span {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+
+  .frequency {
+    .options {
+      .option_item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 30px;
+
+        .title {
+          min-width: 130px;
+        }
+
+        select {
+          min-width: 350px;
+          padding: 10px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: none;
+    border-radius: 20px;
+    background-color: $shadow_unavailable;
+    backdrop-filter: blur(2px);
+    z-index: 1;
+  }
+
+  &::after {
+    content: "In Progress..";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: $light;
+    z-index: 3;
+  }
+
+  &.in_progress {
+    padding: 20px;
+    &:hover {
+      &::before,
+      &::after {
+        display: flex;
+      }
+    }
+  }
+}
+
+@media (width <= $breakpoint-md) {
+  .notification_wrap {
+    padding: 10px 0;
+
+    h3 {
+      font-size: 16px;
+    }
+
+    .by_type_of_day {
+      margin: 20px 0;
+
+      .options {
+        gap: 20px;
+      }
+    }
+
+    .frequency {
+      .options {
+        .option_item {
+          align-items: flex-start;
+          flex-direction: column;
+          margin-bottom: 10px;
+          gap: 10px;
+
+          .title {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    &.in_progress {
+      &:before,
+      &:after {
+        display: flex;
+      }
+    }
+  }
+}

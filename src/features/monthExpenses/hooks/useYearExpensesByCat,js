@@ -1,0 +1,7 @@
+import { useGetYearExpensesByCatQuery } from "../service/expensesSlice"; 
+
+export const useYearExpensesByCat = (info) => { 
+  const {data, isLoading, error} = useGetYearExpensesByCatQuery({year: info.year, id: info.id}); 
+
+  return { data, isLoading, error }
+}

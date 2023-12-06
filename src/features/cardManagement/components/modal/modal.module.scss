@@ -1,0 +1,98 @@
+@import "src/variables.scss";
+
+.container {
+  position: relative;
+  display: block;
+  background: #fff;
+  padding: 30px 23px;
+  border-radius: 16px;
+  max-width: 480px;
+  width: 100%;
+}
+
+.title{
+  position: relative;
+    font-size: 22px;
+    color: $dark;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.sub_text{
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: $grey;
+}
+
+.currencies{
+  .currency_item{
+    display: flex;
+    margin-bottom: 10px;
+    .name{
+      margin-right: 15px;
+      color: $grey;
+    }
+    input[type=number]{
+      width: 100%;
+      margin-right: 40px;
+      border: none;
+      border-bottom: 1px solid $light-grey;
+      color: $dark;
+    }
+    input[type=radio]{
+      position: relative;
+      bottom: -5px;
+      accent-color: $grey;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
+
+
+.actions {
+  display: flex;
+  justify-content: flex-end; 
+  margin-top: 15px;
+  
+  .save {
+    background: $coral;
+    border-radius: 8px;
+    color: #fff;
+    border: none;
+    margin-right: 5px;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .close {
+    position: relative;
+    background: #d4d4d4;
+    border-radius: 8px;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 16px;
+      left: 8px;
+      width: 15px;
+      height: 1px;
+      background-color: #fff;
+      transform: rotate(45deg);
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 16px;
+      left: 8px;
+      width: 15px;
+      height: 1px;
+      background-color: #fff;
+      transform: rotate(-45deg);
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@import "src/variables.scss";
+
+.container{
+  position: relative;
+  background: white;
+  padding: 30px 40px;
+  border-radius: 16px;
+  max-width: 375px;
+  width: 100%;
+  color: #000 !important;
+
+  .title{
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .actions{
+    display: flex;
+    justify-content: flex-end;
+
+    button{
+      margin-left: 10px;
+      padding: 8px;
+      outline: none; 
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:nth-child(1){
+        border: 1px solid $coral;
+        background: $coral;
+        color: #fff;  
+        padding: 8px 16px;
+        text-transform: uppercase;
+      }
+      &:nth-child(2){
+        background: transparent;
+        border: 1px solid $light-grey;
+        padding: 8px 14px;
+        color: $light-grey;
+      }
+    }
+  }
+}

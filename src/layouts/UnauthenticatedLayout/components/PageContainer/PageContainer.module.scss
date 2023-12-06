@@ -1,0 +1,15 @@
+@import "src/variables.scss";
+
+.page{
+  position: relative;
+  display: flex;
+  height: 100vh;
+  background-color: #1e1e1e;
+  
+  * {
+    &::-webkit-scrollbar { width: 3px; }
+    &::-webkit-scrollbar-track { background: $brown; }
+    &::-webkit-scrollbar-thumb { background: $green; border-radius: 20px;}
+  }
+}
+

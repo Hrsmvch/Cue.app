@@ -1,0 +1,201 @@
+@import "src/variables.scss";
+
+.profile_settings {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 50px;
+  margin: 0px 0 10px;
+
+  .avatar_section {
+    position: relative;
+    height: fit-content;
+
+    .avatar {
+      height: 160px;
+      width: 160px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50px;
+    }
+
+    .update_avatar {
+      position: absolute;
+      bottom: -10px;
+      right: -12px;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $light;
+      border-radius: 20px;
+      transition: border 300ms ease-in-out;
+      background: $taupe;
+      z-index: 2;
+      cursor: pointer;
+
+      svg{
+        path{
+          fill: $light;
+        }
+      }
+
+      &:hover {
+        transition: border 300ms ease-in-out;
+        border-color: $taupe;
+      }
+    }
+  }
+
+  .update_user_info {
+    width: 100%;
+
+    .form_fields {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px 15px;
+
+      label {
+        font-size: 14px;
+
+        .profile__input {
+          width: 100%;
+          padding: 10px 25px;
+          margin-top: 8px;
+          border: 1px solid $dark;
+          border-radius: 18px;
+          background: transparent;
+
+          &.error{
+            border-color: red;
+          }
+        }
+        .modal__error_message{
+          color: red;
+          padding: 5px 20px;
+          font-size: 12px;
+          position: absolute;
+        }
+      }
+    } 
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 20px;
+
+      .save {
+        padding: 12px 34px;
+        border: 2px solid $dark-green;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 22px;
+        transition: border-color 200ms linear;
+        background: $dark-green;
+        color: $light;
+
+        cursor: pointer;
+        &:hover {
+          transition: border-color 200ms linear;
+          border-bottom-color: $darken-green;
+          border-left-color: $darken-green;
+        }
+      }
+      .cancel {
+        border: 2px solid $light-grey;
+        background: transparent;
+        border-radius: 10px;
+        padding: 12px 34px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        color: $light-grey;
+        transition: border-color 200ms linear, color 200ms linear;
+
+        cursor: pointer;
+        &:hover {
+          transition: border-color 200ms linear, color 200ms linear;
+          border-bottom-color: $grey;
+          border-left-color: $grey;
+          color: $grey;
+        }
+      }
+    }
+  }
+}
+
+@media (width <= $breakpoint-md) {
+  .profile_settings {
+    flex-direction: column;
+    gap: 30px;
+
+    .avatar_section {
+      .avatar {
+        width: calc(100% - 20px);
+        border-radius: 20px;
+      }
+      .update_avatar {
+        right: 0;
+      }
+    }
+
+    .update_user_info {
+      .form_fields {
+        gap: 8px;
+      }
+      .actions {
+        gap: 8px;
+        .save,
+        .cancel {
+          width: 50%;
+          padding: 8px 34px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (width <= $breakpoint-sm) {
+  .profile_settings {
+    gap: 15px;
+
+    .avatar_section {
+      .avatar {
+        width: calc(100% - 10px);
+      }
+      .update_avatar {
+        right: 0;
+        width: 48px;
+        height: 48px;
+        svg {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+
+    .update_user_info {
+      .form_fields {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 8px;
+        label {
+          font-size: 12px;
+          input {
+            margin-top: 5px;
+          }
+        }
+      }
+      .actions {
+        gap: 8px;
+        .save,
+        .cancel {
+          padding: 5px 20px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

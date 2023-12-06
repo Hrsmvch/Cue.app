@@ -1,0 +1,45 @@
+@import "src/variables.scss";
+
+.page {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  background-color: #1e1e1e;
+  overflow-x: hidden;
+
+
+  main {
+    background-color: #efd2c8;
+    
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    // overflow: hidden;
+    width: 100%;
+    padding: 26px 36px;
+    
+  }
+
+  * {
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+    &::-webkit-scrollbar-track {
+      background: $grey;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $brown;
+      border-radius: 20px;
+    }
+  }
+}
+
+@media (width <= $breakpoint-md){
+  .page{
+    main{
+      padding: 26px 16px;
+    }
+  }
+}
+
+ 
+ 

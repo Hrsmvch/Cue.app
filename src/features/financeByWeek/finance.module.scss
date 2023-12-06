@@ -1,0 +1,43 @@
+.week_overview { 
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+
+  .week_period {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 10px;
+  }
+
+  .week_sum {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 46px;
+    color: #575757;
+    position: relative;
+
+    span { 
+        font-size: 18px;
+        position: absolute;
+        top: -10px;
+    }
+  }
+  .bars_container{ 
+    flex-grow: 1;
+
+  }
+  .no_data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    flex-grow: 1;
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;  
+    color: #575757;
+    font-size: 14px;
+    line-height: 24px;
+
+  }
+}

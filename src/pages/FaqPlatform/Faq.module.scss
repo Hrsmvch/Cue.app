@@ -1,0 +1,36 @@
+@import "src/variables.scss";
+
+.faq_page {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+
+  .page_title {
+    position: relative;
+    font-size: 32px;
+    line-height: 52px; 
+    margin-bottom: 20px;
+    color: $dark;
+ 
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .faq_page {
+    .page_title {
+      font-size: 20px;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .faq_page {
+    padding: 16px;
+    
+    .page_title {
+      font-size: 18px; 
+      text-align: center; 
+    }
+  }
+}

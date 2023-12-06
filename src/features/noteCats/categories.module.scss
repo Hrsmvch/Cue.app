@@ -1,0 +1,126 @@
+@import "src/variables.scss";
+
+.cats_wrapper {
+  position: relative;
+  margin-top: 30px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -36px;
+    bottom: -5px;
+    background: #000;
+    width: calc(100% + 48px);
+    height: 1px;
+    display: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -36px;
+    top: -10px;
+    background: #000;
+    width: calc(100% + 48px);
+    height: 1px;
+    display: none;
+  }
+
+  .cats {
+    max-height: calc(100vh - 112px);
+    overflow-y: auto;
+    padding-right: 10px;
+    align-items: baseline;
+
+    .cat_all {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 30px;
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 29px;
+      cursor: pointer; 
+    }
+  }
+
+  .no_data {
+    margin: 50px 0 0 30px;
+    color: $grey;
+    border: 1px solid $grey;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 22px;
+    span {
+      color: $dark;
+      font-size: 22px;
+      font-weight: 600;
+    }
+  }
+}
+
+@media (width <= $breakpoint-lg) {
+  .cats_wrapper {
+    &::before {
+      display: block;
+    }
+
+    &::after {
+      display: block;
+    }
+
+    .cats {
+      display: flex;
+      overflow-x: auto;
+      padding-right: 80px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .cat_all {
+        white-space: nowrap;
+        margin: 0;
+        margin-right: 20px;
+        margin-left: 0 !important;
+        cursor: pointer;
+
+        .cat_name {
+          font-size: 16px;
+          margin-bottom: 0;
+          font-weight: 400;
+        }
+        &.active {
+          .cat_name {
+            font-weight: 600;
+          }
+        }
+        svg {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (width <= $breakpoint-md) {
+  .cats_wrapper {
+    &::before,
+    &::after {
+      display: block;
+      left: -16px;
+    }
+  }
+}
+
+@media (width <= $breakpoint-md) {
+  .cats_wrapper {
+    margin-left: -16px;
+    margin-right: -32px;
+    .cats {
+      padding: 0 16px;
+    }
+  }
+}

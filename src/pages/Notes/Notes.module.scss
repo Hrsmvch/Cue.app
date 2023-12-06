@@ -1,0 +1,52 @@
+@import "src/variables.scss";
+
+.note_page {
+  display: flex;
+  width: 100%;
+}
+
+.categories_container {
+  flex: 1;
+  padding: 12px 16px 12px 0;
+  counter-reset: catCount 0;
+  width: 100%;
+}
+
+.notes_container {
+  flex: 2;
+  height: calc(100vh);
+  margin: -26px -36px 0 0;
+  padding: 30px 30px 0;
+  border-radius: 50px 0px 0px 50px;
+  background: white;
+  width: 100%;
+
+  & > div:first-child {
+    padding: 0px 6px 0px 30px;
+  }
+}
+
+@media (width <= $breakpoint-lg) {
+  .note_page {
+    flex-direction: column;
+  }
+
+  .notes_container {
+    margin: 0;
+    border-radius: 0;
+    background: unset;
+    padding: 0;
+    padding-right: 102px;
+
+    & > div:first-child { 
+      display: none;
+    }
+  }
+}
+
+
+@media (width <= $breakpoint-sm) {
+  .notes_container { 
+    padding-right: 0px;
+  }
+}

@@ -1,0 +1,374 @@
+@import "src/variables.scss";
+
+.container {
+  position: relative;
+  background: #fff;
+  padding: 30px 23px;
+  border-radius: 16px;
+  max-width: 560px;
+  width: 100%;
+  overflow: hidden;
+
+  .close_btn {
+    position: absolute;
+    right: 0px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &::before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      right: 0;
+      width: 24px;
+      height: 2px;
+      background: #b3b2b2;
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.heading {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 34px;
+  color: $dark;
+
+  svg {
+    width: 40px;
+    margin-right: 10px;
+  }
+}
+
+.form {
+  .simple__input {
+    display: block;
+    width: 100%;
+    height: 44px;
+    margin: 15px 0;
+    padding: 8px;
+    outline: none;
+    border: 1px solid $light-grey;
+    color: $dark;
+    border-radius: 8px;
+    background: "transparent";
+
+    &.error {
+      border: 1px solid red;
+    }
+  }
+
+  .simple__textarea {
+    font-family: "Comfortaa", sans-serif;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid $light-grey;
+    color: $dark;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: calc(100% - 350px);
+    resize: none;
+    outline: none;
+  }
+
+  .group {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .custom_repeat {
+    position: relative;
+    margin-top: 8px;
+    .custom_date, .custom_date_ends, .repeat_on {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+
+      .custom_title {
+        margin-right: 20px;
+        min-width: 182px;
+      }
+      input.number {
+        width: 53px;
+        height: 44px;
+        border-radius: 8px;
+        outline: none;
+        text-align: center;
+        border: 1px solid #8f8f8f;
+        margin-right: 10px;
+      }
+
+      .days{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 8px;
+        .day{
+          padding: 8px;
+          border: 1px solid $grey;
+          color: $grey;
+          background-color: transparent;
+          border-radius: 8px;
+          min-width: 35px;
+          cursor: pointer;
+
+          &.selected{
+            background-color: $coral;
+            color: #fff;
+            border-color: #fff;
+          }
+        }
+      }
+    }  
+ 
+  }
+  .custom_datePicker {
+    outline: none;
+    padding: 8px;
+    border: 1px solid #848484;
+    background: transparent;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    height: 44px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // cursor: pointer;
+
+    svg {
+      opacity: 0.4;
+      height: 20px;
+    }
+
+    &.error {
+      border: 1px solid red;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    .save {
+      background: $coral;
+      border-radius: 8px;
+      color: #fff;
+      border: none;
+      margin-right: 5px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+    .close {
+      position: relative;
+      border: 1px solid $coral;
+      background: transparent;
+      border-radius: 8px;
+      color: $coral;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+  }
+}
+
+.event_preview{
+  position: relative;
+ 
+
+  .event_data{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+
+    svg{
+      height: 26px;
+      width: auto;
+      margin-right: 10px;
+    }
+  }
+
+  .event_footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #DF9981;
+    margin: 30px -23px -30px;
+    padding: 30px 23px;
+    color: #fff;
+
+    .event_type, 
+    .event_action {
+      display: flex;
+      align-items: center;
+    }
+
+    .event_type{
+      text-transform: capitalize;
+      svg{
+        margin-right: 15px;
+        path{
+          stroke: #fff;
+        }
+      }
+    }
+
+    .event_action {
+      svg{
+        opacity: 0.5;
+        margin-left: 10px;
+        transition: opacity 300ms linear;
+        cursor: pointer;
+
+        path{
+          fill: #fff;
+        }
+
+        &:hover{
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+}
+
+.event_title{
+  font-size: 28px;
+  line-height: 34px; 
+  color: #4D4C4C;
+  margin-bottom: 24px;
+}
+
+.description{
+  margin: 30px 0 15px;
+}
+
+.event_remove{
+  .close {
+    position: absolute;
+    right: 24px;
+    top: 34px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &::before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      right: 0;
+      width: 24px;
+      height: 2px;
+      background: #b3b2b2;
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+  }
+  .remove_current,
+  .remove_all{
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid $coral;
+    color: $coral;
+    text-transform: uppercase;
+    font-weight: 600;
+    background: transparent;
+  }
+  .remove_all{
+    color: $light;
+    background: $coral;
+  }
+}
+
+.error_message{
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: red;
+}
+@media (width <= $breakpoint-md) {
+  .container {
+    padding: 15px 16px;
+
+    .close_btn {
+      width: 20px;
+      height: 20px;
+
+      &::before,
+      &:after {
+        width: 20px;
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .heading {
+    margin-bottom: 10px;
+    font-size: 18px;
+
+    svg {
+      width: 30px;
+    }
+  }
+
+  .form {
+    .simple__input {
+      height: 38px;
+      margin: 8px 0;
+      font-size: 16px;
+    }
+
+    .simple__textarea {
+      font-size: 16px;
+    }
+
+    .group {
+      flex-direction: column;
+      &.no_gap {
+        gap: 0;
+      }
+    }
+
+    .custom_datePicker {
+      margin-bottom: 8px;
+      height: 38px;
+      font-size: 16px;
+
+      svg {
+        height: 18px;
+      }
+    }
+  }
+}

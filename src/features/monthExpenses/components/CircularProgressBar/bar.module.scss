@@ -1,0 +1,28 @@
+
+.CircularProgressBar { 
+  min-width: 40px;
+  width: 40px;
+  height: 40px; 
+  margin-right: 10px;
+}
+
+.CircularProgressBar_background {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 3;
+}
+
+.CircularProgressBar_progress {
+  fill: none;
+  stroke-width: 5;
+  stroke-linecap: round;
+ 
+}
+
+.CircularProgressBar_text {
+  fill: var(--black);
+  font-size: 13px;
+  font-weight: bold;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
