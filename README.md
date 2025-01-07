@@ -59,19 +59,31 @@ Open [http://localhost:5173](http://localhost:5173) to view the project in your 
 The project structure is organized as follows:
 
 cue.app/
-├── src/          # Application source code
-│   ├── assets/   # Static assets like images and fonts
-│   ├── components/ # Reusable components
-│   ├── data/     # Constants and data
-│   ├── features/ # Feature-specific code
-│   ├── hooks/    # Custom React hooks
-│   ├── layouts/  # Layout components
-│   ├── pages/    # Page components for routing
-│   ├── services/ # API slices and service logic
-│   ├── utils/    # Utility functions
-├── public/       # Static assets
-├── package.json  # Project dependencies and scripts
-├── vite.config.js # Vite configuration
+src/          # Application source code
+
+── assets/   # Static assets like images and fonts
+
+── components/ # Reusable components
+
+── data/     # Constants and data
+
+── features/ # Feature-specific code
+
+── hooks/    # Custom React hooks
+
+── layouts/  # Layout components
+
+── pages/    # Page components for routing
+
+── services/ # API slices and service logic
+
+── utils/    # Utility functions
+
+public/       # Static assets
+
+package.json  # Project dependencies and scripts
+
+vite.config.js # Vite configuration
 
 ## Available Scripts
 
